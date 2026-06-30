@@ -73,63 +73,89 @@
   Scenario: Book a tour
     Given I am logged in as a customer
     When I select a location and choose a local guide
-    Then I should receive a confirmation of the booked session
+    Then I should receive a confirmation of the booked tour
 
 
 - **US-4 - Write a review after a tour**
 
-    _Story:_ 
+    _Story:_ As a customer, I want to write a review so that I can leave reviews for other customers to see
 
     _Acceptance:_
   
-    Scenario: 
+    Scenario: Write a review
+    Given I am logged in as a customer
+    When I go to the tour host profile
+    Then I should be able to leave a comment
 
-- **US-4 **
+- **US-5 - Book multiple tours**
+
+   _Story:_ As a customer, I want to book multiple tours at the same time so that I can visit multiple locations on the same day if I wish to
+
+   _Acceptance:_
+
+   Scenario: Book multiple tours
+   Given I am logged in as a customer 
+   When I select a location/locations and choose a local guide
+   Then I should be able to book multiple tours and receive a confirmation
+
 
 ### 2.2 Provider (Trainer) Stories
 
-- **US-5 - Create and update profile**
-  _Story:_ 
+- **US-6 - Create and update profile**
+  _Story:_ As a provider, I want to create/update a profile so that I can host tours and reach customers.
 
   _Acceptance:_
   
-  Scenario: 
-- **US-6 - **
+  Scenario: Create profile
+  Given I am not registered
+  When I provide valid credentials
+  Then I should be successfully registered
 
-  _Story:_ 
+- **US-7 - Create tours**
+
+  _Story:_ As a provider, I want to create tours so that I can offer my services to customers
 
   _Acceptance:_
   
-  Scenario: 
+  Scenario: Create tours
+  Given I am logged in as a provider
+  When I create a tour and publish it
+  Then it should appear on the website for customers to see
 
-- **US-7 - **
+- **US-8 - Respond to ratings**
 
-  _Story:_
+  _Story:_ As a provider, I want to respond to customers so that I can improve on areas I lacked in
   _Acceptance:_
   
-  Scenario:
+  Scenario: Respond to ratings
+  Given I am logged in as a provider
+  When I respond to customers
+  Then my respond should appear
     
 
-- **US-8 - **
+- **US-9 - Pitch what experiences my tour offers**
 
-  _Story:_ 
+  _Story:_ As a provider, I want to pitch my services so that I can attract customers and increase sales.
 
   _Acceptance:_
   
-  Scenario: 
+  Scenario: Pitch services
+  Given I am logged in as a provider
+  When I pitch my services
+  Then theres a possibilty it can attract more customers
 ---
 
 ## 3. Non‑Functional Requirements
-- **Performance:** 
-- **Availability/Reliability:** 
-- **Security/Privacy:** 
-- **Usability:** 
+- **Performance:** All actions should be performed and executed in a fast, timely manner. < 1.8 seconds
+- **Availability/Reliability:** Should be available at all times unless there is maintenance ongoing
+- **Security/Privacy:** All users will be required to go through authentication and private data will be hashed and securely stored.
+- **Usability:** Very straight forward to use, users will create a profile and use the site as intended. Should take no more than a few minutes.
 
 ---
 
 ## 4. Assumptions, Constraints, and Policies
-- 
-- 
+- Modern device compatibility
+- Modern browsers; good internet connection
 
 ---
 
