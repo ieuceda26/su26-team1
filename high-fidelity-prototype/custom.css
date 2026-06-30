@@ -1,0 +1,51 @@
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: none;
+  color: #000;
+}
+
+.logo-house {
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.25;
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-left: 28px;
+}
+
+.container {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.location-card {
+  overflow: hidden;
+  border: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.location-image {
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.location-card .card-body {
+  padding: 1rem 1rem 1.25rem;
+}
