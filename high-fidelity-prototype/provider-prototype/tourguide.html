@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LocalGuide - Tour Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+        <div class="container">
+            <a class="navbar-brand logo" href="../index.html">
+            <svg class="logo-house" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
+                <path d="M3 11.5L12 4l9 7.5" />
+                <path d="M5 10v9h14v-9" />
+            </svg>
+            <span class="logo-text">LocalGuide</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="../customer-prototype/tour.html">Book a Tour</a></li>
+                <li class="nav-item"><a class="nav-link" href="../login.html">Login / Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="../customer-prototype/locations.html">Locations</a></li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Message -->
+    <div class="container mt-4 align-items-center text-center">
+      <h1>Welcome, Jackson!</h1>
+      <p>Ready to guide some folks through the city?</p>
+    </div>
+
+    <!-- Dashboard -->
+    <div class="container mt-4">
+      <h2>Dashboard</h2>
+      <p>Here's an overview of your tours and activities.</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Total Tours</h5>
+              <p class="card-text">3</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Upcoming Tours</h5>
+              <p class="card-text">2</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Reviews</h5>
+              <p class="card-text">5</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tour List / Add new tour -->
+    <div class="container mt-4">
+      <h2>Your Tours</h2>
+      <a href="tourform.html" class="btn btn-primary m-3">&plus; New Tour</a>
+      <div class="list-group">
+        <p class="list-group-item">Cave Spelunking<br>
+          Find the hidden gem that is a good time in the Mendip Caves.<br>
+          <small>Duration: 2 hours</small><br>
+          <small>Location: Hidden Caves of Mendip</small><br>
+          <small>Price: $30</small><br>
+          <small>Max Participants: 10</small><br>
+          <small>Keywords: Walk-n'-Talk, Fast-Paced, Slightly Dangerous</small><br>
+          <a href="tourform.html" class="btn btn-primary mt-2">Edit Tour</a>
+        </p>
+        <p class="list-group-item">Swim This Way<br>
+          Take a chance and shake a fin! Some fine pools await you.<br>
+          <small>Duration: 2.5 hours</small><br>
+          <small>Location: Coastal Tide Pools</small><br>
+          <small>Price: $40</small><br>
+          <small>Max Participants: 8</small><br>
+          <small>Keywords: Water Activities, Outdoor, Snacks Included</small><br>
+          <a href="tourform.html" class="btn btn-primary mt-2">Edit Tour</a>
+        </p>
+        <p class="list-group-item">Street Art Scavenger Hunt<br>
+          Some of the best art in the city is out of a museum.<br>
+          <small>Duration: 2.5 hours</small><br>
+          <small>Location: Urban Street Art District</small><br>
+          <small>Price: $35</small><br>
+          <small>Max Participants: 12</small><br>
+          <small>Keywords: Art, Culture, Local</small><br>
+          <a href="tourform.html" class="btn btn-primary mt-2">Edit Tour</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="container mt-4">
+      <h2>Reviews</h2>
+      <div class="card">
+        <div class="card-body">
+          <p>&starf;&starf;&starf;&starf;&starf;</p>
+          <h5 class="card-title">Great Tour!</h5>
+          <p class="card-text">Went in for the spelunking, stayed for the history lesson. Highly recommend his tours!</p>
+          <button class="btn btn-primary">Reply</button>
+          <hr>
+          <p>&starf;&starf;&starf;&starf;&star;</p>
+          <h5 class="card-title">Informative and Fun</h5>
+          <p class="card-text">The street art scavenger hunt was loads of fun and I learned a lot. Thanks, Jackson!</p>
+          <button class="btn btn-primary">Reply</button>
+          <hr>
+          <p>&starf;&starf;&starf;&starf;&star;</p>
+          <h5 class="card-title">Tour went...swimmingly</h5>
+          <p class="card-text"> I gotta say, that tide pool tour was great! Loved getting a soak in, and I appreciate Jackson giving us snacks!</p>
+          <button class="btn btn-primary">Reply</button>
+          <hr>
+          <p>&starf;&starf;&starf;&star;&star;</p>
+          <h5 class="card-title">Overall Pleasant</h5>
+          <p class="card-text">Had a generally decent time on the tours, I just thought Jackson talked too fast at points LOL</p>
+          <button class="btn btn-primary">Reply</button>
+          <hr>
+          <p>&starf;&starf;&starf;&starf;&star;</p>
+          <h5 class="card-title">Cool dude doing cool tours</h5>
+          <p class="card-text">Probably one of the better tours guides I had met so far. He knows his stuff!</p>
+          <button class="btn btn-primary">Reply</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+      <div class="container p-4">
+        <p>&copy; 2026 LocalGuide. This is an educational project.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  </body>
+</html>
