@@ -95,7 +95,7 @@ DELETE /tours/{id}
 
 ---
 
-### 4. Reviews
+### 3. Reviews
 
 **Write a review**
 ```
