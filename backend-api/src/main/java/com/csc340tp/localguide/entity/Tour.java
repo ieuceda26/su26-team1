@@ -20,17 +20,18 @@ public class Tour {
 
     // Partner will replace TourListing with their own entity
     // For now stores the service_id as a foreign key placeholder
-    @Column(name = "service_id")
-    private Long serviceId;
+    @ManyToOne
+    @JoinColumn(name = "service_id")
+    private Tourlisting tourlisting;
 
     public Tour() {}
 
-    public Tour(String name, String text, String location, Tourist tourist, Long serviceId) {
+    public Tour(String name, String text, String location, Tourist tourist, Tourlisting tourlisting) {
         this.name = name;
         this.text = text;
         this.location = location;
         this.tourist = tourist;
-        this.serviceId = serviceId;
+        this.tourlisting = tourlisting;
     }
 
     public Long getTourId() { return tourId; }
@@ -48,6 +49,6 @@ public class Tour {
     public Tourist getTourist() { return tourist; }
     public void setTourist(Tourist tourist) { this.tourist = tourist; }
 
-    public Long getServiceId() { return serviceId; }
-    public void setServiceId(Long serviceId) { this.serviceId = serviceId; }
+    public Tourlisting getTourlisting() { return tourlisting; }
+    public void setTourlisting(Tourlisting tourlisting) { this.tourlisting = tourlisting; }
 }
