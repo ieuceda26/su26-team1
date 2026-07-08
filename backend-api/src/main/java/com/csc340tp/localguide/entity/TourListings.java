@@ -1,6 +1,5 @@
 package com.csc340tp.localguide.entity;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,28 +11,31 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "guide")
+@Table(name = "tour_listing")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Guide {
+public class TourListings {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
     private String name;
     @Column
-    private String email;
+    private String location;
     @Column
-    private String password;
+    private String description;
     @Column
-    private String keyword;
+    private double price;
+    @Column
+    private String maxparticipants;
 
-    public Guide(String name, String email, String password, String keyword) {
+    public TourListings(String name, String location, String description, double price, String maxparticipants) {
         this.name = name;
-        this.email = email;
-        this.password = password;
-        this.keyword = keyword;
+        this.location = location;
+        this.description = description;
+        this.price = price;
+        this.maxparticipants = maxparticipants;
     }
 
 }
