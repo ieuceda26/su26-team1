@@ -17,16 +17,17 @@ public class Review {
     @JoinColumn(name = "tourist_id")
     private Tourist tourist;
 
-    // Foreign key: guide being reviewed (by guide_id)
-    private Long guideId;
+    @ManyToOne
+    @JoinColumn(name = "guide_id")
+    private Guide guide;
 
     public Review() {}
 
-    public Review(Integer rating, String text, Tourist tourist, Long guideId) {
+    public Review(Integer rating, String text, Tourist tourist, Guide guide) {
         this.rating = rating;
         this.text = text;
         this.tourist = tourist;
-        this.guideId = guideId;
+        this.guide = guide;
     }
 
     public Long getReviewId() { return reviewId; }
@@ -41,6 +42,6 @@ public class Review {
     public Tourist getTourist() { return tourist; }
     public void setTourist(Tourist tourist) { this.tourist = tourist; }
 
-    public Long getGuideId() { return guideId; }
-    public void setGuideId(Long guideId) { this.guideId = guideId; }
+    public Guide getGuide() { return guide; }
+    public void setGuide(Guide guide) { this.guide = guide; }
 }
