@@ -30,7 +30,6 @@ public class AppController {
         "<li><a href=\"/api/tour-listings/1\">/tour-listings/{id} (you can replace 1 with any listing ID)</a></li>"+
         "</ul>"+
         "<p> Review API endpoints:</p>" +
-        "<ul><li><a href=\"/reviews\">/reviews</a></li>"+
         "<li><a href=\"/reviews/1\">/reviews/{id} (you can replace 1 with any review ID)</a></li>"+
         "<li><a href=\"/reviews/tourist/1\">/reviews/tourist/{touristId} (reviews by tourist ID, you can replace 1 with any tourist ID)</a></li>"+
         "<li><a href=\"/reviews/guide/1\">/reviews/guide/{guideId} (reviews by guide ID, you can replace 1 with any guide ID)</a></li>"+
