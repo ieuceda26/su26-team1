@@ -52,7 +52,7 @@ public class ReviewService {
     }
 
     public List<Review> getReviewsByGuide(Long guideId) {
-        return reviewRepository.findByGuideGuideId(guideId);
+        return reviewRepository.findByGuideId(guideId);
     }
 
     public Optional<Review> getReviewById(Long id) {

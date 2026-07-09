@@ -18,9 +18,7 @@ public class Tour {
     @JoinColumn(name = "tourist_id")
     private Tourist tourist;
 
-    // Partner will replace TourListing with their own entity
-    // For now stores the service_id as a foreign key placeholder
-    @Column(name = "service_id")
+    @JoinColumn(name = "tour_listing_id")
     private Long serviceId;
 
     public Tour() {}
