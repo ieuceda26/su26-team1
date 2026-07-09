@@ -19,10 +19,12 @@ public class TourService {
     private TouristRepository touristRepository;
 
     // book()
-    public Tour book(Long touristId, Long serviceId, String name, String text, String location) {
+    public Tour book(Long touristId, Tourlisting tourlisting, String name, String text, String location) {
         Tourist tourist = touristRepository.findById(touristId)
                 .orElseThrow(() -> new RuntimeException("Tourist not found: " + touristId));
-        Tour tour = new Tour(name, text, location, tourist, serviceId);
+        Tourlisting listing = tourlistingRepository.findById(serviceId)
+                .orElseThrow(() -> new RuntimeException("Tour listing not found: " + serviceId));
+        Tour tour = new Tour(name, text, location, tourist, listing);
         return tourRepository.save(tour);
     }
 
