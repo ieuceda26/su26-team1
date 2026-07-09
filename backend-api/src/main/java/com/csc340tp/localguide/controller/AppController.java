@@ -22,9 +22,8 @@ public class AppController {
         "<li><a href=\"/api/guides/keyword-search?keyword=example\">/guides/keyword-search?keyword=example (search guides by keyword)</a></li>"+
         "</ul>"+
         "<p> Tour API endpoints:</p>" +
-        "<ul><li><a href=\"/api/tours\">/tours</a></li>"+
-        "<li><a href=\"/api/tours/1\">/tours/{id} (you can replace 1 with any tour ID)</a></li>"+
-        "<li><a href=\"/api/tours/tourist/1\">/tours/tourist/{touristId} (you can replace 1 with any tourist ID)</a></li>"+
+        "<li><a href=\"/tours/1\">/tours/{id} (you can replace 1 with any tour ID)</a></li>"+
+        "<li><a href=\"/tours/tourist/1\">/tours/tourist/{touristId} (you can replace 1 with any tourist ID)</a></li>"+
         "</ul>"+
         "<p> Tour listing API endpoints:</p>" +
         "<ul><li><a href=\"/api/tour-listings\">/tour-listings</a></li>"+
