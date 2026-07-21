@@ -18,7 +18,7 @@ public class Review {
     private Tourist tourist;
 
     @ManyToOne
-    @JoinColumn(name = "guide_id")
+    @JoinColumn(name = "guide_id", nullable = true)
     private Guide guide;
 
     public Review() {}
