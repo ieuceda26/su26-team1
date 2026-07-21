@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 public class Guide {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     @Column
     private String name;
     @Column

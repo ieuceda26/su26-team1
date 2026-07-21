@@ -59,4 +59,8 @@ public class GuideService {
     public List<Guide> searchGuidesByKeyword(String keyword) {
         return guideRepository.findByKeywordContainingIgnoreCase(keyword);
     }
+
+    public Guide findByEmail(String email) {
+        return guideRepository.findByEmail(email);
+    }
 }
