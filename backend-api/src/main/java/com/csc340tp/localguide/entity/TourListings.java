@@ -29,13 +29,16 @@ public class TourListings {
     private double price;
     @Column
     private String maxparticipants;
+    @Column(length = 1000)
+    private String imageUrl;
 
-    public TourListings(String name, String location, String description, double price, String maxparticipants) {
+    public TourListings(String name, String location, String description, double price, String maxparticipants, String imageUrl) {
         this.name = name;
         this.location = location;
         this.description = description;
         this.price = price;
         this.maxparticipants = maxparticipants;
+        this.imageUrl = imageUrl;
     }
 
 }

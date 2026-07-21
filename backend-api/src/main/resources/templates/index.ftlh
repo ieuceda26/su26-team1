@@ -22,10 +22,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="customer-prototype/tour.html">Book a Tour</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">Login / Sign Up</a></li>
-                <li class="nav-item"><a class="nav-link" href="customer-prototype/locations.html">Locations</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/book">Book a Tour</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/login">Login / Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/locations">Locations</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/logout">Logout</a></li>
             </ul>
             </div>
         </div>
@@ -43,7 +44,7 @@
         <div class="card-body text-center">
           <h5 class="card-title">Locations</h5>
           <p class="card-text">Browse niche destinations hosted by local guides.</p>
-          <a href="customer-prototype/locations.html" class="btn btn-primary">View Locations</a>
+          <a href="/customer/locations" class="btn btn-primary">View Locations</a>
         </div>
       </div>
     </div>
@@ -52,7 +53,7 @@
         <div class="card-body text-center">
           <h5 class="card-title">Tour Guide</h5>
           <p class="card-text">Find and book a guided tour in a unique local spot.</p>
-          <a href="customer-prototype/tour.html" class="btn btn-primary">Book a Tour</a>
+          <a href="/customer/book" class="btn btn-primary">Book a Tour</a>
         </div>
       </div>
     </div>

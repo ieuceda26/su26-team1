@@ -11,7 +11,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container">
-            <a class="navbar-brand logo" href="../index.html">
+            <a class="navbar-brand logo" href="/customer/index">
             <svg class="logo-house" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
                 <path d="M3 11.5L12 4l9 7.5" />
                 <path d="M5 10v9h14v-9" />
@@ -23,10 +23,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="../customer-prototype/tour.html">Book a Tour</a></li>
-                <li class="nav-item"><a class="nav-link" href="../login.html">Login / Sign Up</a></li>
-                <li class="nav-item"><a class="nav-link" href="../customer-prototype/locations.html">Locations</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/book">Book a Tour</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/dashboard">Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/locations">Locations</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/logout">Logout</a></li>
             </ul>
             </div>
         </div>
@@ -34,42 +35,36 @@
 
     <!-- List of Available Tours with buttons and descriptions -->
     <div class="container mt-4">
-      <h1>Available Tours from Jackson</h1>
-      <div class="list-group">
-        <div class="list-group-item">
-          <h5 class="mb-1">Cave Spelunking</h5>
-          <p class="mb-1">Find the hidden gem that is a good time in the Mendip Caves.<br>
-          <small>Duration: 2 hours</small><br>
-          <small>Location: Hidden Caves of Mendip</small><br>
-          <small>Price: $30</small>
-          <button class="btn btn-primary float-end">Book Now</button>
-          </div>
-        <div class="list-group-item">
-          <h5 class="mb-1">Swim This Way</h5>
-          <p class="mb-1">Take a chance and shake a fin! Some fine pools await you.<br>
-          <small>Duration: 2.5 hours</small><br>
-          <small>Location: Coastal Tide Pools</small><br>
-          <small>Price: $40</small>
-          <button class="btn btn-primary float-end">Book Now</button></p>
-          </div>
-        <div class="list-group-item">
-          <h5 class="mb-1">Street Art Scavenger Hunt</h5>
-          <p class="mb-1">Some of the best art in the city is out of a museum.<br>
-          <small>Duration: 2.5 hours</small><br>
-          <small>Location: Urban Street Art District</small><br>
-          <small>Price: $35</small>
-          <button class="btn btn-primary float-end">Book Now</button></p>
-        </div>
-      </div>
+      <h1>Available Tours</h1>
+
+        <#if tourListings?has_content>
+            <div class="list-group">
+                <#list tourListings as listing>
+                    <div class="list-group-item">
+                        <h5 class="mb-1">${listing.name}</h5>
+                        <p class="mb-1">${listing.description}</p>
+                        <small>Location: ${listing.location}</small><br>
+                        <small>Price: $${listing.price}</small><br>
+                        <small>Max Participants: ${listing.maxparticipants}</small>
+                        <form method="post" action="/customer/book" class="mt-2">
+                            <input type="hidden" name="serviceId" value="${listing.id}">
+                            <button type="submit" class="btn btn-primary float-end">Book Now</button>
+                        </form>
+                    </div>
+                </#list>
+            </div>
+        <#else>
+            <p class="text-muted mt-3">No tours available yet. Check back soon!</p>
+        </#if>
     </div>
 
     <!--Write a review section here-->
     <div class="container mt-4">
       <h2>Write a Review</h2>
-      <form>
+      <form method="post" action="/customer/review" class="card p-4">
         <div class="mb-3">
           <label for="rating" class="form-label">Rating</label>
-          <select class="form-select" id="rating">
+          <select class="form-select" id="rating" name="rating" required>
             <option value="5">&starf;&starf;&starf;&starf;&starf;</option>
             <option value="4">&starf;&starf;&starf;&starf;&star;</option>
             <option value="3">&starf;&starf;&starf;&star;&star;</option>
@@ -78,12 +73,20 @@
           </select>
         </div>
         <div class="mb-3">
-          <label for="tourname" class="form-label">What tour did you go to?</label>
-          <input type="text" class="form-control" id="tourname">
+          <label for="listingId" class="form-label">Select Tour Listing ID</label>
+          <select class="form-select" id="listingId" name="listingId" required>
+            <#if tourListings?has_content>
+              <#list tourListings as listing>
+                <option value="${listing.id}">${listing.name} (ID: ${listing.id})</option>
+              </#list>
+            <#else>
+              <option value="1">Default Listing</option>
+            </#if>
+          </select>
         </div>
         <div class="mb-3">
           <label for="review" class="form-label">Your Review</label>
-          <textarea class="form-control" id="review" rows="3"></textarea>
+          <textarea class="form-control" id="review" name="text" rows="3" placeholder="Tell us about your experience" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit Review</button>
       </form>
