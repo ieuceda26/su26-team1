@@ -23,7 +23,7 @@ public class TourController {
         String name = body.get("name").toString();
         String text = body.get("text").toString();
         String location = body.get("location").toString();
-        return ResponseEntity.ok(tourService.book(touristId, serviceId, name, text, location));
+        return ResponseEntity.ok(tourService.book(touristId, serviceId));
     }
 
     // GET all bookings for a tourist

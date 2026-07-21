@@ -22,10 +22,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="customer-prototype/tour.html">Book a Tour</a></li>
-                <li class="nav-item"><a class="nav-link" href="login.html">Login / Sign Up</a></li>
-                <li class="nav-item"><a class="nav-link" href="customer-prototype/locations.html">Locations</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/book">Book a Tour</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/login">Login / Sign Up</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/locations">Locations</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/logout">Logout</a></li>
             </ul>
             </div>
         </div>

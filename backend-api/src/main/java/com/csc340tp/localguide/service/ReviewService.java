@@ -1,12 +1,8 @@
 package com.csc340tp.localguide.service;
-
-import com.csc340tp.localguide.entity.Guide;
 import com.csc340tp.localguide.entity.Review;
 import com.csc340tp.localguide.entity.Tourist;
-import com.csc340tp.localguide.repository.GuideRepository;
 import com.csc340tp.localguide.repository.ReviewRepository;
 import com.csc340tp.localguide.repository.TouristRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -14,22 +10,20 @@ import java.util.Optional;
 @Service
 public class ReviewService {
 
-    @Autowired
-    private ReviewRepository reviewRepository;
+private final ReviewRepository reviewRepository;
+private final TouristRepository touristRepository;
 
-    @Autowired
-    private TouristRepository touristRepository;
-
-    @Autowired
-    private GuideRepository guideRepository;
+public ReviewService(ReviewRepository reviewRepository, TouristRepository touristRepository) {
+    this.reviewRepository = reviewRepository;
+    this.touristRepository = touristRepository; 
+}
 
     // writeRev()
-    public Review writeReview(Long touristId, Long guideId, Integer rating, String text) {
+    public Review writeReview(Long touristId, Long listingId, Integer rating, String text) {
         Tourist tourist = touristRepository.findById(touristId)
                 .orElseThrow(() -> new RuntimeException("Tourist not found: " + touristId));
-        Guide guide = guideRepository.findById(guideId)
-                .orElseThrow(() -> new RuntimeException("Guide not found: " + guideId));
-        Review review = new Review(rating, text, tourist, guide);
+
+        Review review = new Review(rating, text, tourist, null);
         return reviewRepository.save(review);
     }
 

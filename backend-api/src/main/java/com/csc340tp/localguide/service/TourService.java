@@ -1,6 +1,7 @@
 package com.csc340tp.localguide.service;
 
 import com.csc340tp.localguide.entity.Tour;
+import com.csc340tp.localguide.entity.TourListings;
 import com.csc340tp.localguide.entity.Tourist;
 import com.csc340tp.localguide.repository.TourRepository;
 import com.csc340tp.localguide.repository.TouristRepository;
@@ -18,11 +19,17 @@ public class TourService {
     @Autowired
     private TouristRepository touristRepository;
 
+    @Autowired
+    private TourListingService tourListingService;
+
     // book()
-    public Tour book(Long touristId, Long serviceId, String name, String text, String location) {
-        Tourist tourist = touristRepository.findById(touristId)
-                .orElseThrow(() -> new RuntimeException("Tourist not found: " + touristId));
-        Tour tour = new Tour(name, text, location, tourist, serviceId);
+    public Tour book(Long touristId, Long serviceId) {
+        Tourist tourist = touristRepository.findById(touristId) 
+                .orElseThrow(() -> new RuntimeException("Tourist not found: " + touristId)); 
+
+        TourListings listings = tourListingService.getListingbyId(serviceId); // Retrieve the tour listing by its ID
+
+        Tour tour = new Tour(listings.getName(), listings.getDescription(), listings.getLocation(), tourist, listings); // Create a new Tour object with the provided details
         return tourRepository.save(tour);
     }
 
@@ -41,11 +48,27 @@ public class TourService {
         tourRepository.deleteById(tourId);
     }
 
+    public Tour complete(Long tourId) {
+        Tour existing = tourRepository.findById(tourId)
+                .orElseThrow(() -> new RuntimeException("Tour not found: " + tourId));
+        existing.setStatus("Completed");
+        return tourRepository.save(existing);
+    }
+
     public List<Tour> getToursByTourist(Long touristId) {
         return tourRepository.findByTouristTouristId(touristId);
     }
 
     public Optional<Tour> getTourById(Long id) {
         return tourRepository.findById(id);
+    }
+
+    public List<Tour> getUpcomingTours(Long touristId) {
+        return tourRepository.findByTouristTouristIdAndStatus(touristId, "Upcoming");
+
+    }
+
+    public List<Tour> getPastTours(Long touristId) {
+        return tourRepository.findByTouristTouristIdAndStatus(touristId, "Completed");
     }
 }
