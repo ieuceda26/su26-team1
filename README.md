@@ -22,3 +22,17 @@ LocalGuide is a guide designed to highlight the not-so-known restuarants and ven
     2. Create services - Tour guides can create new tours, detailing a location, availability hours, and a description of what the tour entails.
     3. View customer statistics -  Tour guides can see customer's bookings on tours they created, as well as general "hot spots" around their location that they could use for tours.
     4. Reply to reviews - Tour guides can reply to reviews left on either their tours or their pages. Professionalism is required.
+
+## Project compartmentalization
+/docs - UML diagram, SRS document, LocalGuidePPT
+/main README.md(this file) - name and description of the project. Names app functions. 
+/backend-api/src/main - /controller, /entity, /repository, /service, /uicontrollers, /resources, /README.md
+/backend-api/src/main/resources - /static, /templates
+In templates we have all the view pages and in static we have and css files and images
+/controller - all the controller files 
+/entity - all the entity files
+/service - all the service files
+/repository - all the repository files
+/uicontrollers - both customer and provider controller files where the endpoints are stored
+/backend-api/README.md - all current endpoints
+

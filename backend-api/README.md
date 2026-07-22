@@ -17,20 +17,17 @@ Render URL: https://su26-team1.onrender.com/
 
 ## Use-Case → Endpoint Mapping
 
-| Use Case | Method | Endpoint |
+| Use Case | MVC Controller Method | Template |
 |---|---|---|
-| register() | POST | /tourists |
-| login() | POST | /tourists/login |
-| updateProfile() | PUT | /tourists/{id} |
-| browseTours() | GET | /tour-listings |
-| book() | POST | /tours |
-| reschedule() | PUT | /tours/{id} |
-| cancel() | DELETE | /tours/{id} |
-| writeRev() | POST | /reviews |
-| editRev() | PUT | /reviews/{id} |
-| delRev() | DELETE | /reviews/{id} |
-
+| US-1: Create customer profile | `POST /customer/register` → `registerCustomer()` | `login.ftlh` |
+| US-1: Login as customer | `POST /customer/login` → `loginCustomer()` | `login.ftlh` |
+| US-1: View profile on dashboard | `GET /customer/dashboard` → `dashboard()` | `dashboard-customer.ftlh` |
+| US-2: Browse tour locations | `GET /customer/locations` → `locations()` | `locations.ftlh` |
+| US-3, US-9: Book a tour | `POST /customer/book` → `bookTour()` | `tour.ftlh` |
+| US-3: Cancel a booking | `POST /customer/cancel/{tourId}` → `cancelTour()` | `dashboard-customer.ftlh` |
+| US-6: Write a review | `POST /customer/review` → `submitReview()` | `review.ftlh` |
 ---
+
 
 ## API Endpoints
 
