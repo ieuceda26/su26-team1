@@ -14,20 +14,17 @@ Actor: **Customer (Tourist)**, **Provider (Guide)**
 
 ## Use-Case → Endpoint Mapping
 
-| Use Case | Method | Endpoint |
+| Use Case | MVC Controller Method | Template |
 |---|---|---|
-| register() | POST | /tourists |
-| login() | POST | /tourists/login |
-| updateProfile() | PUT | /tourists/{id} |
-| browseTours() | GET | /tour-listings |
-| book() | POST | /tours |
-| reschedule() | PUT | /tours/{id} |
-| cancel() | DELETE | /tours/{id} |
-| writeRev() | POST | /reviews |
-| editRev() | PUT | /reviews/{id} |
-| delRev() | DELETE | /reviews/{id} |
-
+| US-1: Create customer profile | `POST /customer/register` → `registerCustomer()` | `login.ftlh` |
+| US-1: Login as customer | `POST /customer/login` → `loginCustomer()` | `login.ftlh` |
+| US-1: View profile on dashboard | `GET /customer/dashboard` → `dashboard()` | `dashboard-customer.ftlh` |
+| US-2: Browse tour locations | `GET /customer/locations` → `locations()` | `locations.ftlh` |
+| US-3, US-9: Book a tour | `POST /customer/book` → `bookTour()` | `tour.ftlh` |
+| US-3: Cancel a booking | `POST /customer/cancel/{tourId}` → `cancelTour()` | `dashboard-customer.ftlh` |
+| US-6: Write a review | `POST /customer/review` → `submitReview()` | `review.ftlh` |
 ---
+
 
 ## API Endpoints
 
@@ -148,3 +145,22 @@ DELETE /reviews/{id}
 - GET /api/tour-listings/{id} - returns a specific tour listing by chosen id. 
 - PUT /api/tour-listings/{id} - edits an already existing tour listing's parameters.
 - DELETE /api/tour-listings/{id} - deletes the specified tour listing.
+
+## MVC UI Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | /customer/login | Show login/register page |
+| POST | /customer/register | Create account and redirect to dashboard |
+| POST | /customer/login | Login and redirect to dashboard |
+| GET | /customer/logout | Invalidate session and redirect to login |
+| GET | /customer/dashboard | Show dashboard with profile, bookings, reviews |
+| GET | /customer/locations | Browse all available tour listings |
+| GET | /customer/book | Show available tours to book |
+| POST | /customer/book | Submit booking |
+| POST | /customer/complete/{tourId} | Mark tour as completed |
+| POST | /customer/cancel/{tourId} | Cancel a booking |
+| GET | /customer/review | Show review form |
+| POST | /customer/review | Submit a review |
+
+---
