@@ -148,3 +148,23 @@ DELETE /reviews/{id}
 - GET /api/tour-listings/{id} - returns a specific tour listing by chosen id. 
 - PUT /api/tour-listings/{id} - edits an already existing tour listing's parameters.
 - DELETE /api/tour-listings/{id} - deletes the specified tour listing.
+
+## MVC UI Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | /customer/login | Show login/register page |
+| POST | /customer/register | Create account and redirect to dashboard |
+| POST | /customer/login | Login and redirect to dashboard |
+| GET | /customer/logout | Invalidate session and redirect to login |
+| GET | /customer/dashboard | Show dashboard with profile, bookings, reviews |
+| GET | /customer/locations | Browse all available tour listings |
+| GET | /customer/book | Show available tours to book |
+| POST | /customer/book | Submit booking |
+| POST | /customer/complete/{tourId} | Mark tour as completed |
+| POST | /customer/cancel/{tourId} | Cancel a booking |
+| GET | /customer/review | Show review form |
+| POST | /customer/review | Submit a review |
+
+---
+
