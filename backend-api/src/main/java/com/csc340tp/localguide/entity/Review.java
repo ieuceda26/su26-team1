@@ -13,7 +13,7 @@ public class Review {
     private String text;
 
     @ManyToOne
-    @JoinColumn(name="tour_listing_id")
+    @JoinColumn(name="tour_listing_id", nullable = false)
     private TourListings listing;
 
     // Foreign key: tourist who wrote the review
