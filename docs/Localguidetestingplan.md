@@ -99,4 +99,4 @@
   4. Customer marks the booked tour as Completed once returning to their dashboard.
   5. Customer clicks on Leave Review, and writes a quick review for their selected tour.
 - **Expected Outcome:**
-  - Time to complete registration and book a session is ≤ 7 minutes.
+  - Time to complete registration and book a tour is ≤ 7 minutes.
