@@ -11,7 +11,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container">
-            <a class="navbar-brand logo" href="/index">
+            <a class="navbar-brand logo" href="/customer/index">
             <svg class="logo-house" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
                 <path d="M3 11.5L12 4l9 7.5" />
                 <path d="M5 10v9h14v-9" />
@@ -73,8 +73,10 @@
       <a href="/guide/new-tour" class="btn btn-primary m-3">&plus; New Tour</a>
       <div class="list-group">
         <#list tourListings as tourListing>
-          <p class="list-group-item">${tourListing.name}<br>
-            ${tourListing.description}<br>
+          <div class="list-group-item">
+            <img src="${tourListing.imageUrl}">
+            <p>${tourListing.name}</p>
+            <p>${tourListing.description}</p>
             <small>Location: ${tourListing.location}</small><br>
             <small>Price: ${tourListing.price}</small><br>
             <small>Max Participants: ${tourListing.maxparticipants}</small><br>
@@ -120,32 +122,32 @@
     <div class="container mt-4">
       <h2>Reviews</h2>
       <div class="card">
+        <#list reviews as review>
         <div class="card-body">
-          <p>&starf;&starf;&starf;&starf;&starf;</p>
-          <h5 class="card-title">Great Tour!</h5>
-          <p class="card-text">Went in for the spelunking, stayed for the history lesson. Highly recommend his tours!</p>
-          <button class="btn btn-primary">Reply</button>
-          <hr>
-          <p>&starf;&starf;&starf;&starf;&star;</p>
-          <h5 class="card-title">Informative and Fun</h5>
-          <p class="card-text">The street art scavenger hunt was loads of fun and I learned a lot. Thanks, Jackson!</p>
-          <button class="btn btn-primary">Reply</button>
-          <hr>
-          <p>&starf;&starf;&starf;&starf;&star;</p>
-          <h5 class="card-title">Tour went...swimmingly</h5>
-          <p class="card-text"> I gotta say, that tide pool tour was great! Loved getting a soak in, and I appreciate Jackson giving us snacks!</p>
-          <button class="btn btn-primary">Reply</button>
-          <hr>
-          <p>&starf;&starf;&starf;&star;&star;</p>
-          <h5 class="card-title">Overall Pleasant</h5>
-          <p class="card-text">Had a generally decent time on the tours, I just thought Jackson talked too fast at points LOL</p>
-          <button class="btn btn-primary">Reply</button>
-          <hr>
-          <p>&starf;&starf;&starf;&starf;&star;</p>
-          <h5 class="card-title">Cool dude doing cool tours</h5>
-          <p class="card-text">Probably one of the better tours guides I had met so far. He knows his stuff!</p>
-          <button class="btn btn-primary">Reply</button>
+          <p class="card-text">Rating: ${review.rating}</p>
+          <p class="card-text">Tour: ${review.listing.name}</p>
+          <p class="card-text">${review.text}</p>
+          <#if review.replyText?? || review.replyText?has_content>
+          <p>Current Reply: ${review.replyText}</p>
+            <form action="/guide/reviews/${review.reviewId}/reply" method="post">
+              <div class="mb-3">
+                <label for="replyText" class="form-label">Edit Reply</label>
+                <input type="text" class="form-control" id="replyText" name="replyText" placeholder="Write your reply here...">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit New Reply</button>
+              </form>
+          </#if>
+          <#if !review.replyText?? || !review.replyText?has_content>
+            <form action="/guide/reviews/${review.reviewId}/reply" method="post">
+              <div class="mb-3">
+                <label for="replyText" class="form-label">Reply</label>
+                <input type="text" class="form-control" id="replyText" name="replyText" placeholder="Write your reply here...">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit Reply</button>
+              </form>
+          </#if>
         </div>
+        </#list>
       </div>
     </div>
 

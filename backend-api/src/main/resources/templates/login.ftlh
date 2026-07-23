@@ -78,7 +78,7 @@
                     </div>
                 </div>
             </div>
-
+            <p><a href="/guide/login">Click here</a> to log in as a Guide.</p>
         </div>
     </div>
 

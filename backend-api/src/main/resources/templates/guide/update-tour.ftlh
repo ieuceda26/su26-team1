@@ -61,6 +61,10 @@
                 <label for="maxparticipants" class="form-label">Maximum Participants</label>
                 <input type="number" class="form-control" name="maxparticipants" id="maxparticipants" value="${tourListing.maxparticipants}" placeholder="Enter maximum number of participants">
             </div>
+            <div class="mb-3">
+                <label for="imageUrl" class="form-label">Maximum Participants</label>
+                <input type="text" class="form-control" name="imageUrl" id="imageUrl" value="${tourListing.imageUrl}" placeholder="Enter Image URL">
+            </div>
             <button type="submit" class="btn btn-primary">Update Tour</button>
         </form>
     </div>

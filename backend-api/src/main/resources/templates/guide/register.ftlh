@@ -32,8 +32,8 @@
 
     <!-- Starting Message -->
     <div class="container mt-4 align-items-center text-center">
-      <h1>Create New Tour</h1>
-      <p>Let's get started on creating your new tour!</p>
+      <h1>New Guide Login</h1>
+      <p>Fill the form below and let's get ready to make tours!</p>
     </div>
 
     <!-- Form for creating a new tour -->

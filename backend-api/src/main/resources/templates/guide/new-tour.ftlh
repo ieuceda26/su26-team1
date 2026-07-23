@@ -11,7 +11,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container">
-            <a class="navbar-brand logo" href="../index.html">
+            <a class="navbar-brand logo" href="/customer/index">
             <svg class="logo-house" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
                 <path d="M3 11.5L12 4l9 7.5" />
                 <path d="M5 10v9h14v-9" />
@@ -23,10 +23,8 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="../about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="../customer-prototype/tour.html">Book a Tour</a></li>
-                <li class="nav-item"><a class="nav-link" href="../login.html">Login / Sign Up</a></li>
-                <li class="nav-item"><a class="nav-link" href="../customer-prototype/locations.html">Locations</a></li>
+                <liclass="nav-item"><a class="nav-link" href="/guide/profile">Back to Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="/guide/logout">Logout</a></li>
             </ul>
             </div>
         </div>
@@ -60,6 +58,10 @@
             <div class="mb-3">
                 <label for="maxparticipants" class="form-label">Maximum Participants</label>
                 <input type="number" class="form-control" name="maxparticipants" id="maxparticipants" placeholder="Enter maximum number of participants">
+            </div>
+            <div class="mb-3">
+                <label for="imageUrl" class="form-label">Maximum Participants</label>
+                <input type="text" class="form-control" name="imageUrl" id="imageUrl" value="${tourListing.imageUrl}" placeholder="Enter Image URL">
             </div>
             <button type="submit" class="btn btn-primary">Create Tour</button>
         </form>
