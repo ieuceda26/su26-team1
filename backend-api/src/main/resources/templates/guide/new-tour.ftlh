@@ -23,7 +23,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <liclass="nav-item"><a class="nav-link" href="/guide/profile">Back to Profile</a></li>
+                <li class="nav-item"><a class="nav-link" href="/guide/profile">Back to Profile</a></li>
                 <li class="nav-item"><a class="nav-link" href="/guide/logout">Logout</a></li>
             </ul>
             </div>
@@ -60,8 +60,8 @@
                 <input type="number" class="form-control" name="maxparticipants" id="maxparticipants" placeholder="Enter maximum number of participants">
             </div>
             <div class="mb-3">
-                <label for="imageUrl" class="form-label">Maximum Participants</label>
-                <input type="text" class="form-control" name="imageUrl" id="imageUrl" value="${tourListing.imageUrl}" placeholder="Enter Image URL">
+                <label for="imageUrl" class="form-label">Image URL</label>
+                <input type="text" class="form-control" name="imageUrl" id="imageUrl" placeholder="Enter Image URL">
             </div>
             <button type="submit" class="btn btn-primary">Create Tour</button>
         </form>

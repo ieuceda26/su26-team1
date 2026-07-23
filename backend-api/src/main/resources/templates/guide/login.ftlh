@@ -46,7 +46,7 @@
             </div>
             <button type="submit" class="btn btn-secondary w-100 mt-2">Login as Tour Guide</button>
         </form>
-        <p class="text-center mt-3">Don't have an account? <a href="/guide/register">Sign up here!</a></p>
+        <p class="text-center mt-3">Are you a new guide? <a href="/guide/register">Sign up here!</a></p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   </body>

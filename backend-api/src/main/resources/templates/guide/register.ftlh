@@ -11,7 +11,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container">
-            <a class="navbar-brand logo" href="/index">
+            <a class="navbar-brand logo" href="/customer/index">
             <svg class="logo-house" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
                 <path d="M3 11.5L12 4l9 7.5" />
                 <path d="M5 10v9h14v-9" />
@@ -23,7 +23,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="/customer/about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="/guide/login">Login / Sign Up</a></li>
             </ul>
             </div>

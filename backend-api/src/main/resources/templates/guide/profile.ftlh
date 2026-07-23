@@ -35,32 +35,19 @@
       <p>Ready to guide some folks through the city?</p>
     </div>
 
-    <!-- Dashboard -->
+     <!-- Profile card - data from Tourist entity -->
     <div class="container mt-4">
-      <h2>Dashboard</h2>
-      <p>Here's an overview of your tours and activities.</p>
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-md-4">
-          <div class="card">
+          <div class="card h-100">
             <div class="card-body">
-              <h5 class="card-title">Total Tours</h5>
-              <p class="card-text">3</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Upcoming Tours</h5>
-              <p class="card-text">2</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Reviews</h5>
-              <p class="card-text">5</p>
+              <h5 class="card-title">My Profile</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Name:</strong> ${guide.name}</li>
+                <li class="list-group-item"><strong>Email:</strong> ${guide.email}</li> 
+                <li class="list-group-item"><strong>Tourist ID:</strong> ${guide.id}</li>
+                <li class="list-group-item"><strong>Keywords:</strong> ${guide.keyword}</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -82,9 +69,11 @@
             <small>Max Participants: ${tourListing.maxparticipants}</small><br>
             <#if tourListing.guide.id == guide.id>
               <a href="/guide/update-tour/${tourListing.id}" class="btn btn-primary mt-2">Edit Tour</a>
-              <a href="/guide/delete-tour/${tourListing.id}" class="btn btn-danger mt-2">Delete Tour</a>
+              <form action="/guide/delete-tour/${tourListing.id}" method="post">
+                <button type="submit" class="btn btn-danger">Delete Tour</button>
+              </form>
             </#if>
-          </p>
+          </div>
         </#list>
       </div>
     </div>
@@ -113,10 +102,13 @@
       </form>
     </div>
 
-    <div class="container mt-4 alert alert-danger">
-      <h2>Delete Account</h2>
-      <a href="/guide/delete/${guide.id}" class="btn btn-danger">Delete</a>
-    </div>
+    <!--Delete Account section-->
+    <div class="bg-warning container mt-4"><h3>Delete Account</h3>
+      <p>Keep in mind that if you delete your account, your tours and reviews will be lost.</p>
+      <form action="/guide/delete/${guide.id}" method="post">
+        <button type="submit" class="btn btn-danger">Delete Tour</button>
+      </form>
+  </div>
 
     <!-- Reviews Section -->
     <div class="container mt-4">
@@ -124,11 +116,11 @@
       <div class="card">
         <#list reviews as review>
         <div class="card-body">
-          <p class="card-text">Rating: ${review.rating}</p>
-          <p class="card-text">Tour: ${review.listing.name}</p>
-          <p class="card-text">${review.text}</p>
+          <h3 class="card-text">Rating: ${review.rating}</h3>
+          <h4 class="card-text">Tour: ${review.listing.name}</h4>
+          <h5 class="card-text">${review.text}</h5>
           <#if review.replyText?? || review.replyText?has_content>
-          <p>Current Reply: ${review.replyText}</p>
+          <p>Current Reply:<br>${review.replyText}</p>
             <form action="/guide/reviews/${review.reviewId}/reply" method="post">
               <div class="mb-3">
                 <label for="replyText" class="form-label">Edit Reply</label>
