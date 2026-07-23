@@ -41,6 +41,7 @@ public class TourListingService {
             existingListing.setDescription(list.getDescription());
             existingListing.setPrice(list.getPrice());
             existingListing.setMaxparticipants(list.getMaxparticipants());
+            existingListing.setImageUrl(list.getImageUrl());
             return tListingRepository.save(existingListing);
         }
         return null;
