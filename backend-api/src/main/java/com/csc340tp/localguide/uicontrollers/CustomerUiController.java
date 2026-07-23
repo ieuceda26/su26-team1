@@ -26,6 +26,11 @@ public class CustomerUiController {
         this.reviewService = reviewService;
     }
 
+    @GetMapping("/index")
+    public String index(){
+        return "index";
+    }
+
     // US-1: Show login/register page
 
     @GetMapping("/login")
