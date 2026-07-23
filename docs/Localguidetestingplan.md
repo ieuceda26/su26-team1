@@ -39,7 +39,7 @@
 #### 5. Provider: US-8 - As a provider, I want to say what experience I offer to tourists.
 1. Provider P1 logs in and goes to Edit Tour.
 2. P1 alters service S1 with changes to the description.
-3. Upon 
+3. Upon clicking to Update Tour, the updated information will be displayed.
 
 ## CROSS-CUTTING TEST SCENARIOS (Non-Functional Requirements)
 
