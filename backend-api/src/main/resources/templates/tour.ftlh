@@ -41,11 +41,14 @@
             <div class="list-group">
                 <#list tourListings as listing>
                     <div class="list-group-item">
+                        <img src="${listing.imageUrl}">
                         <h5 class="mb-1">${listing.name}</h5>
+                        <h6 class="mb-1">By: ${listing.guide.name}</h6>
                         <p class="mb-1">${listing.description}</p>
                         <small>Location: ${listing.location}</small><br>
                         <small>Price: $${listing.price}</small><br>
-                        <small>Max Participants: ${listing.maxparticipants}</small>
+                        <small>Max Participants: ${listing.maxparticipants}</small><br>
+                        <small>Keywords: ${listing.guide.keyword}</small>
                         <form method="post" action="/customer/book" class="mt-2">
                             <input type="hidden" name="serviceId" value="${listing.id}">
                             <button type="submit" class="btn btn-primary float-end">Book Now</button>
