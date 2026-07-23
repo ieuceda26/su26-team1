@@ -9,6 +9,7 @@ import java.util.List;
 public interface ReviewRepository extends JpaRepository<Review, Long> {
     List<Review> findByTouristTouristId(Long touristId);
     List<Review> findByGuideId(Long guideId);
+    void deleteByListing_Id(Long listingId);
 }
 
 

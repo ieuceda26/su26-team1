@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
         <div class="container">
-            <a class="navbar-brand logo" href="index.html">
+            <a class="navbar-brand logo" href="/customer/index">
             <svg class="logo-house" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="1.5">
                 <path d="M3 11.5L12 4l9 7.5" />
                 <path d="M5 10v9h14v-9" />
@@ -26,7 +26,6 @@
                 <li class="nav-item"><a class="nav-link" href="/customer/book">Book a Tour</a></li>
                 <li class="nav-item"><a class="nav-link" href="/customer/login">Login / Sign Up</a></li>
                 <li class="nav-item"><a class="nav-link" href="/customer/locations">Locations</a></li>
-                <li class="nav-item"><a class="nav-link" href="/customer/logout">Logout</a></li>
             </ul>
             </div>
         </div>

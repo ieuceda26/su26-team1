@@ -23,6 +23,7 @@ public class Tour {
     @JoinColumn(name = "service_id")
     private TourListings tourListings;
 
+
     public Tour() {
     }
 

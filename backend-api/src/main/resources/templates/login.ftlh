@@ -27,7 +27,6 @@
                 <li class="nav-item"><a class="nav-link" href="/customer/book">Book a Tour</a></li>
                 <li class="nav-item"><a class="nav-link" href="/customer/login">Login / Sign Up</a></li>
                 <li class="nav-item"><a class="nav-link" href="/customer/locations">Locations</a></li>
-                <li class="nav-item"><a class="nav-link" href="/customer/logout">Logout</a></li>
             </ul>
             </div>
         </div>
@@ -78,9 +77,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
+
+     <a href="/guide/login" class="btn btn-primary">Log in as Guide</a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvw"></script>
 </body>

@@ -1,7 +1,6 @@
 package com.csc340tp.localguide.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -58,5 +57,9 @@ public class GuideService {
 
     public List<Guide> searchGuidesByKeyword(String keyword) {
         return guideRepository.findByKeywordContainingIgnoreCase(keyword);
+    }
+
+    public Guide findByEmail(String email) {
+        return guideRepository.findByEmail(email);
     }
 }

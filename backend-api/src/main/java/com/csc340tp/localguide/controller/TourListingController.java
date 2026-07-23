@@ -45,8 +45,8 @@ public class TourListingController {
     }
 
     @PostMapping
-    public ResponseEntity<TourListings> createListing(@RequestBody TourListings listing) {
-        TourListings createdListing = tourListingService.createListing(listing);
+    public ResponseEntity<TourListings> createListing(@RequestBody TourListings listing, @PathVariable long guideId) {
+        TourListings createdListing = tourListingService.createListing(listing, guideId);
         return ResponseEntity.ok(createdListing);
     }
 

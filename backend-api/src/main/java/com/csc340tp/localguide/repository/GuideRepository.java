@@ -12,4 +12,6 @@ public interface GuideRepository extends JpaRepository<Guide, Long> {
     List<Guide> findByNameContainingIgnoreCase(String nameKeyword);
     
     List<Guide> findByKeywordContainingIgnoreCase(String keyword);
+
+    Guide findByEmail(String emailKeyword);
 }
